@@ -1,0 +1,15 @@
+Metadata-Version: 2.1
+Name: betterpicklejar
+Version: 0.0.7
+Summary: Wrapper Classes To Automatically Handle The Access/Creation of Pickle Files
+Author: Elbert Timothy
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+License-File: LICENSE
+
+betterpicklejar is a wrapper library around the Python pickle module.
+
+It automatically handles the management of pickle files into 'Jars' for each file, all of which are contained within a 'pickle_shelf' directory.

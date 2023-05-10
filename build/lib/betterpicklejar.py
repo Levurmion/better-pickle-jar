@@ -5,6 +5,9 @@ import pickle as p
 from typing import Callable
 import inspect
 
+PYTHON_ENV = str(sub.check_output('which python', shell=True)).strip("b'").strip('\\n')
+print(PYTHON_ENV)
+
 class PickleShelf:
    '''
    Configure `betterpicklejar` with a `pickle_shelf` directory in the root of your project. This is where you will keep all of your `PickleJars` for each individual file. Your project's directory should be configured as a `PYTHONPATH` environment variable from your virtual environment's `activate.sh` file (typically in `venv/bin`). This will be seen as your `PickleShelf's` root directory.
@@ -30,7 +33,7 @@ class PickleShelf:
          
    def __build_shelf(self, shelf_dir: str):
       PROJECT_PATH = os.environ.get('PYTHONPATH')
-      SCRIPT_PATH = os.path.join(os.path.dirname(__file__),'build_shelf.sh')
+      SCRIPT_PATH = os.path.join(os.path.dirname(PYTHON_ENV), 'build_shelf.sh')
       SHELF_DIR = os.path.join(PROJECT_PATH, shelf_dir)
       # make sure it is executable
       sub.call(f'chmod +x {SCRIPT_PATH}', shell=True)
@@ -63,7 +66,7 @@ class PickleJar:
    def __build_jar(self):
       SHELF_DIR = PickleShelf._PickleShelf_dir
       PROJECT_PATH = os.environ.get('PYTHONPATH')
-      SCRIPT_PATH = SCRIPT_PATH = os.path.join(os.path.dirname(__file__),'build_jar.sh')
+      SCRIPT_PATH = os.path.join(os.path.dirname(PYTHON_ENV), 'build_jar.sh')
       JAR_DIR = os.path.join(SHELF_DIR, self.uniqueFilename + '_JAR')
       # make sure it is executable
       sub.call(f'chmod +x {SCRIPT_PATH}', shell=True)

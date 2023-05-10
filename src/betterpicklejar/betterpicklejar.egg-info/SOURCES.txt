@@ -1,0 +1,10 @@
+LICENSE
+README.md
+setup.py
+scripts/build_jar.sh
+scripts/build_shelf.sh
+src/betterpicklejar/betterpicklejar.py
+src/betterpicklejar/betterpicklejar.egg-info/PKG-INFO
+src/betterpicklejar/betterpicklejar.egg-info/SOURCES.txt
+src/betterpicklejar/betterpicklejar.egg-info/dependency_links.txt
+src/betterpicklejar/betterpicklejar.egg-info/top_level.txt
