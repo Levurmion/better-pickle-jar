@@ -2,4 +2,7 @@
 venv
 
 #ignore pycache
-.pyc
+*.pyc
+
+#ignore .pkl
+*.pkl
